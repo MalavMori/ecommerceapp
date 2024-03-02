@@ -1,0 +1,14 @@
+.category_main{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    .cardbox{
+        margin: 10px;
+        cursor: pointer;
+        transition: 0.2s;
+        
+    }
+    .cardbox:hover{
+        transform: translateY(-10px);
+    }
+}

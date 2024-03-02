@@ -1,0 +1,10 @@
+.example-card {
+    max-width: 400px;
+
+}
+@media(max-width:730px){
+  .example-card {
+    max-width: 300px;
+  }
+}
+  

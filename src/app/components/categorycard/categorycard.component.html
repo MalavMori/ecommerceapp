@@ -1,0 +1,10 @@
+
+<div class="categorycard" routerLink='category/{{categoryname}}'>
+  <mat-card class="example-card">
+    <img (load)="dataLoded()" [style.display]="isimgloded ? '' : 'none'" mat-card-image src={{categoryimg}} alt="">
+    <img   *ngIf="!isimgloded"  mat-card-image src="../../../assets/images/preloader.svg" alt="">
+    <mat-card-content>
+          <h2>{{categoryname | titlecase }}</h2>
+        </mat-card-content>
+      </mat-card>
+</div>

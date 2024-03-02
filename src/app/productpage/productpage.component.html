@@ -1,0 +1,37 @@
+<div class="productpage_main">
+    <div class="product_image">
+        <img src={{productdata?.image}} alt="">
+    </div>
+    <div class="product_info">
+        <h3>{{productdata?.title}}</h3>
+        <div class="rating">
+            <h4>{{productdata?.rate}}</h4>
+            <span class="material-symbols-outlined">
+                star
+            </span>
+        </div>
+        <div class="sale_stock">
+            <h4>{{productdata?.sale}} pieces delivered</h4>
+            <h4>{{productdata?.count}} pieces in stock</h4>
+        </div>
+        <div class="price">
+            <h2>{{productdata?.currentmrp | currency : "INR"}}</h2>
+            <h4><s>{{productdata?.mrp | currency : "INR"}}</s></h4>
+            <h4>{{100 - discountPercentage }}% off</h4>
+        </div>
+        <div class="description">
+            <p>{{productdata?.description}}</p>
+        </div>
+        
+        <div class="purchase">
+            <a (click)="addToCart()" mat-fab extended routerLink=".">
+                <mat-icon>shopping_cart</mat-icon>
+                Add To Cart
+              </a>
+            <a (click)="buyProduct()" mat-fab extended routerLink=".">
+                <mat-icon>local_shipping</mat-icon>
+                Buy
+              </a>
+        </div>
+    </div>
+</div>

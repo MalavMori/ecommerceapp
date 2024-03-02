@@ -1,0 +1,21 @@
+<div class="filter_main">
+    <mat-form-field>
+        <mat-label>Sort by</mat-label>
+        <mat-select #sorttype>
+          @for (sotrvalue of sortvalues; track $index) {
+            <mat-option [value]="sotrvalue.value">{{sotrvalue.viewValue}}</mat-option>
+          }
+        </mat-select>
+        
+      </mat-form-field>
+    
+    <mat-form-field>
+        
+        <mat-label>Order by</mat-label>
+          <mat-select #order >
+              <mat-option [value]="'htl'">High To Low</mat-option>
+              <mat-option [value]="'lth'">Low To High</mat-option>
+          </mat-select>
+    </mat-form-field>
+    <button mat-raised-button (click)="filter(sorttype.value,order.value)">Filter</button>
+</div>

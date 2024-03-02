@@ -1,0 +1,40 @@
+<nav class="navbar">
+  <div class="nav_logo" routerLink="">
+    <span class="material-symbols-outlined"> storefront </span>
+    <h2>MeriDukan</h2>
+  </div>
+  <div class="nav_search">
+    <form>
+      <mat-form-field class="nav_search_bar">
+        <mat-label>Search</mat-label>
+        <input
+          type="text"
+          (keypress)="search($event)"
+          (input)="filter(inputtag.value)"
+          #inputtag
+          matInput
+          [matAutocomplete]="auto"
+        />
+
+        <mat-autocomplete slot="2" #auto="matAutocomplete">
+          <mat-option *ngFor="let num of currentarr" [value]="num">{{
+            num
+          }}</mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+      <span (click)="search(inputtag.value)" class="material-symbols-outlined">
+        search
+      </span>
+    </form>
+  </div>
+  <div class="nav_links">
+    <button routerLink="" mat-fab extended color="primary">
+      <mat-icon>home</mat-icon>
+      Home
+    </button>
+    <button routerLink="/cart" mat-fab extended color="primary">
+      <mat-icon>shopping_cart</mat-icon>
+      Cart
+    </button>
+  </div>
+</nav>

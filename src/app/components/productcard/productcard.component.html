@@ -1,0 +1,11 @@
+<mat-card routerLink="/product/{{productid}}" class="example-card">
+    <div>
+        <img mat-card-image src={{productimg}} alt="Photo of a Shiba Inu">
+    </div>
+    <mat-card-content>
+        <h3>{{producttitle}}</h3>
+        <h3>{{currentprice | currency : "INR"}}</h3>
+        <h4><s>{{mrpprice | currency : "INR"}}</s></h4>
+        
+    </mat-card-content>
+  </mat-card>

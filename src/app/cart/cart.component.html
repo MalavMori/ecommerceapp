@@ -1,0 +1,11 @@
+<div class="cart_main">
+    <h2 *ngIf="iscartempty" style="text-align: center;">Cart is Empty</h2>
+    <app-cartproduct (updatecartprice)="updateCartPrice()" (removeitem)="updateCart($event)" *ngFor="let cartproductdata of cartproductdata" [producttitle]="cartproductdata.title" [productimg]="cartproductdata.image" [productmrp]="cartproductdata.mrp" [productcmrp]="cartproductdata.currentmrp" [productquantity]="cartproductdata.quantity" [productid]="cartproductdata.id"></app-cartproduct>
+    <div *ngIf="!iscartempty" class="total_price">
+        <h2>Total Cost: {{totalprice | currency : "INR"}}</h2>
+        <a mat-fab (click)="buyProduct()" extended routerLink=".">
+            <mat-icon>local_shipping</mat-icon>
+            Buy
+          </a>
+    </div>
+</div>

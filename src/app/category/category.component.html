@@ -1,0 +1,6 @@
+<app-filter (filterdata)="filterdata($event)"></app-filter>
+<div class="category_main">
+    @for (product of productdata; track $index) {
+        <app-productcard class="cardbox" [productid]="product.id" [producttitle]="product.title" [productimg]="product.image" [currentprice]="product.currentmrp" [mrpprice]="product.mrp"></app-productcard>
+    }
+</div>
